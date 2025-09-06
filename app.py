@@ -10,3 +10,14 @@ from collections import defaultdict, deque, Counter
 import re, math
 
 app = Flask(__name__)
+
+@app.route("/")
+def root():
+    resp = make_response(jsonify({"service": "ticketing-agent", "status": "ok"}), 200)
+    resp.headers["Content-Type"] = "application/json"
+    return resp
+
+
+if __name__ == "__main__":
+    # For local development only
+    app.run()
