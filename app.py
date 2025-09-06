@@ -25,6 +25,12 @@ def chasetheflag():
     "challenge5": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
     })
 
+@app.route("/payload_crackme", methods=["GET"])
+def payload_crackme():
+    file_path = os.path.join("./", "payload_crackme")
+    if os.path.isfile(file_path):
+        return send_file(file_path, as_attachment=True)
+
 @app.route("/payload_sqlinject", methods=["GET"])
 def payload_sqlinject():
     file_path = os.path.join("./", "payload_sqlinject")
