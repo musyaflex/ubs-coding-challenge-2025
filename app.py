@@ -14,6 +14,16 @@ def root():
     return resp
 
 
+@app.route("/chasetheflag", methods=["POST"])
+def chasetheflag():
+    return jsonify({
+    "challenge1": "your_flag_1",
+    "challenge2": "",
+    "challenge3": "",
+    "challenge4": "",
+    "challenge5": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
+    })
+
 @app.route("/mst-calculation", methods=["POST"])
 def mst_calculation():
     try:
